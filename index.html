@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Dreams - Tu destino ideal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PetWings - Agencia de vuelos para mascotas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-row">
+            <div class="brand">
+                <!-- simple paw + plane icon -->
+                <svg class="logo" viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+                    <g fill="#fff">
+                        <path d="M8 28c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z"/>
+                        <path d="M46 8c3 2 7 6 8 10 1 5-3 9-8 9-5 0-9-4-9-9s5-11 9-10z"/>
+                        <path d="M10 48c2-2 8-6 14-4 6 2 10 6 12 8 2 2 6 2 8 0 2-2 6-6 8-6s6 0 6 6v2H10v-6z" opacity="0.9"/>
+                    </g>
+                </svg>
+                <div class="brand-text">
+                    <strong>PetWings</strong>
+                    <small>Vuelos seguros para mascotas</small>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="#search">Buscar</a>
+                <a href="#services">Servicios</a>
+                <a href="#about">Nosotros</a>
+                <a href="#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-inner container">
+                <h1>Vuela con tu mascota, con seguridad y estilo</h1>
+                <p class="lead">Rutas nacionales e internacionales especializadas para perros, gatos y animales exóticos.</p>
+                <form id="search" class="search-form" aria-label="Buscar vuelos">
+                    <div class="field-row">
+                        <label class="sr-only">Origen</label>
+                        <input name="from" placeholder="Origen (ciudad o aeropuerto)" required>
+                        <label class="sr-only">Destino</label>
+                        <input name="to" placeholder="Destino" required>
+                    </div>
+                    <div class="field-row">
+                        <input type="date" name="date" required>
+                        <select name="petType" required>
+                            <option value="perro">Perro</option>
+                            <option value="gato">Gato</option>
+                            <option value="ave">Ave</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <select name="petSize" required>
+                            <option value="small">Pequeña</option>
+                            <option value="medium">Mediana</option>
+                            <option value="large">Grande</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn primary" type="submit">Buscar vuelos</button>
+                        <button class="btn ghost" type="button" id="open-info">¿Cómo funciona?</button>
+                    </div>
+                </form>
+            </div>
+            <!-- flying paw decoration -->
+            <div class="paw-wrap" aria-hidden="true">
+                <div class="paw paw-1"></div>
+                <div class="paw paw-2"></div>
+                <div class="paw paw-3"></div>
+            </div>
+        </section>
+
+        <section id="services" class="services container">
+            <h2>Servicios destacados</h2>
+            <p class="center">Transporte en cabina y bodega adaptado, equipo veterinario, asistencia 24/7.</p>
+            <div class="cards">
+                <article class="card">
+                    <h3>Cabina Comfort</h3>
+                    <p>Animales pequeños viajan contigo en cabina, con asientos adaptados.</p>
+                </article>
+                <article class="card">
+                    <h3>Bodega Segura</h3>
+                    <p>Sistemas de climatización y sujeción certificados para mascotas grandes.</p>
+                </article>
+                <article class="card">
+                    <h3>Asistencia Veterinaria</h3>
+                    <p>Chequeo pre-vuelo y soporte durante el trayecto.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="results" class="results container" aria-live="polite"></section>
+
+        <section id="about" class="about container">
+            <h2>Sobre PetWings</h2>
+            <p>Especialistas en transporte animal con más de 10 años de experiencia y miles de mascotas voladas con éxito.</p>
+        </section>
+
+        <section id="contact" class="contact container">
+            <h2>Contacto</h2>
+            <p>¿Dudas? Escríbenos y te orientamos sobre normas, documentación y cuidados.</p>
+            <form id="contact-form">
+                <input name="name" placeholder="Nombre" required>
+                <input name="email" type="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Mensaje" required></textarea>
+                <div class="form-actions">
+                    <button class="btn primary" type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 PetWings · Vuelos seguros para mascotas</p>
+            <small>Política de transporte y condiciones disponibles bajo petición.</small>
+        </div>
+    </footer>
+
+    <!-- Booking modal (hidden) -->
+    <div id="booking-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Cerrar">✕</button>
+            <h3>Reservar vuelo</h3>
+            <form id="booking-form">
+                <input name="owner" placeholder="Tu nombre" required>
+                <input name="phone" placeholder="Teléfono" required>
+                <input name="petName" placeholder="Nombre de la mascota" required>
+                <select name="cabin">
+                    <option value="cabin">Cabina</option>
+                    <option value="cargo">Bodega</option>
+                </select>
+                <div class="form-actions">
+                    <button class="btn primary" type="submit">Confirmar reserva</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="confetti"></div>
+
+    <script src="action.js"></script>
+</body>
+</html>
